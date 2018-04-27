@@ -1,0 +1,32 @@
+
+Lesson 2, Rex 1--3, brute force:  be able to draw a possibilities tree to solve a given problem
+
+
+Lesson 3, Rex 4:  be able to formally apply the definitions of big O, big omega, and big theta
+
+
+Lesson 3, Rex 7:  be able to solve a given divide and conquer recurrence relation and state the big-Theta efficiency category
+
+
+Lesson 4, Rex 8:  be able to figure out the efficiency category for a sum by representing it as the area of some rectangles and then bounding the area of the rectangles by a definite integral
+
+
+Lesson 5, Rex 9:  be able to demonstrate Karatsuba's algorithm---show how to compute a product of two n-digit integers by doing just 3 n/2-digit multiplications and any number of additions and subtractions
+
+
+Lesson 5, Rex 10:  be able to do algebraic derivations/formulas similar to what you did in deriving formulas for Strassen's algorithm
+
+
+Lesson6, Rex 12:   be able to write down the Fourier matrix for given n and alpha (with alpha^n = 1)
+
+
+Lesson6, Rex 16:  given a Fourier matrix  F of size n using integers mod p for some prime p, where alpha is one of the integers mod p,
+
+and a vector y, with the product Fy given for checking purposes,
+
+   show the FFT idea by computing the product by doing just 2 n/2-size matrix-vector products and suitably adjusting.
+
+
+Hope that helps,
+
+Jerry
