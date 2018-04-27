@@ -20,18 +20,18 @@ public class Project7 {
         while (!isBest){
             if(priority == null){
                 priority = new PriorityQueue<boundObj>();
-                createNode(new ArrayList<Integer>(0));
+                //createNode(new ArrayList<Integer>(0));
             }
         }
     }
 
-    private static boundObj createNode(ArrayList<Integer> listOfItems){
-        int weight = listOfItems.stream().mapToInt(i ->(int)items[i][1]).sum();
-        int
-        while (weight < capacity)
-        boundObj node = new boundObj();
-        return node;
-    }
+//    private static boundObj createNode(ArrayList<Integer> listOfItems){
+//        int weight = listOfItems.stream().mapToInt(i ->(int)items[i][1]).sum();
+//        int
+//        while (weight < capacity)
+//        boundObj node = new boundObj();
+//        return node;
+//    }
 
     private static void printKnapsack(){
         System.out.println("Capacity  of knapsack is " + capacity);
