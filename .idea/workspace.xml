@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="566b7317-3bfb-41e2-bf37-e5cd83f11582" name="Default" comment="Update Proj 4">
+    <list default="true" id="566b7317-3bfb-41e2-bf37-e5cd83f11582" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/boundObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/boundObj.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,8 +90,8 @@
       <file leaf-file-name="Project7.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Project7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+            <state relative-caret-position="482">
+              <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -354,7 +352,7 @@
       <workItem from="1524851629538" duration="396000" />
       <workItem from="1524853872603" duration="791000" />
       <workItem from="1524854700771" duration="5013000" />
-      <workItem from="1524882329882" duration="3580000" />
+      <workItem from="1524882329882" duration="3810000" />
     </task>
     <task id="LOCAL-00001" summary="Update Proj 4">
       <created>1524862804852</created>
@@ -363,11 +361,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524862804852</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update Proj 4">
+      <created>1524886253053</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1524886253053</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43879000" />
+    <option name="totallyTimeSpent" value="44109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1253" height="1087" extended-state="0" />
@@ -394,7 +399,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="bottom" id="Favorites" order="3" sideWeight="0.5061538" side_tool="true" weight="0.11904762" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.3985729" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.39814815" />
       <window_info anchor="bottom" id="CheckStyle" order="4" weight="0.3293979" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -416,7 +421,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Project7.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -781,6 +794,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/boundObj.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -811,16 +834,6 @@
             <element signature="e#1654#1655#0" expanded="true" />
             <element signature="e#1700#1701#0" expanded="true" />
             <element signature="e#1736#1737#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Project7.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
