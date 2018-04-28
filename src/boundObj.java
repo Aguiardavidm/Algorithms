@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class boundObj implements Comparator<boundObj>{
-    private int weight;
+    private double weight;
     private ArrayList<Integer> setOfItems;
     private double price;
     private double bound;
@@ -10,7 +10,7 @@ public class boundObj implements Comparator<boundObj>{
     private boundObj rightChild;
     private boundObj parent;
 
-    public boundObj(int weight, ArrayList<Integer> setOfItems, double price, double bound) {
+    public boundObj(double weight, ArrayList<Integer> setOfItems, double price, double bound) {
         this.weight = weight;
         this.setOfItems = setOfItems;
         this.price = price;
@@ -23,11 +23,11 @@ public class boundObj implements Comparator<boundObj>{
     }
 
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
