@@ -1,18 +1,20 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class boundObj implements Comparator<boundObj>{
+public class boundObj implements Comparator<boundObj> {
     private double weight;
     private ArrayList<Integer> setOfItems;
+    private ArrayList<Integer> excludes;
     private double price;
     private double bound;
     private boundObj leftChild;
     private boundObj rightChild;
     private boundObj parent;
 
-    public boundObj(double weight, ArrayList<Integer> setOfItems, double price, double bound) {
+    public boundObj(double weight, ArrayList<Integer> setOfItems, ArrayList<Integer> excludes, double price, double bound) {
         this.weight = weight;
         this.setOfItems = setOfItems;
+        this.excludes = excludes;
         this.price = price;
         this.bound = bound;
     }
@@ -22,8 +24,7 @@ public class boundObj implements Comparator<boundObj>{
         return (int)(o1.bound - o2.bound);
     }
 
-
-    public double getWeight() {
+    double getWeight() {
         return weight;
     }
 
@@ -31,7 +32,7 @@ public class boundObj implements Comparator<boundObj>{
         this.weight = weight;
     }
 
-    public ArrayList<Integer> getSetOfItems() {
+    ArrayList<Integer> getSetOfItems() {
         return setOfItems;
     }
 
@@ -39,7 +40,15 @@ public class boundObj implements Comparator<boundObj>{
         this.setOfItems = setOfItems;
     }
 
-    public double getPrice() {
+    public ArrayList<Integer> getExcludes() {
+        return excludes;
+    }
+
+    public void setExcludes(ArrayList<Integer> excludes) {
+        this.excludes = excludes;
+    }
+
+    double getPrice() {
         return price;
     }
 
@@ -47,7 +56,7 @@ public class boundObj implements Comparator<boundObj>{
         this.price = price;
     }
 
-    public double getBound() {
+    double getBound() {
         return bound;
     }
 
@@ -59,7 +68,7 @@ public class boundObj implements Comparator<boundObj>{
         return leftChild;
     }
 
-    public void setLeftChild(boundObj leftChild) {
+    void setLeftChild(boundObj leftChild) {
         this.leftChild = leftChild;
     }
 

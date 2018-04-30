@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Project7 {
 
@@ -20,28 +17,78 @@ public class Project7 {
 
     private static void generateNodes(){
         boolean isBest = false;
-        while (!isBest){
+        Integer counter = 0;
+        do {
             if(priority == null){
-                priority = new PriorityQueue<boundObj>();
-                priority.add(new boundObj(0,null,0,getBound(null,null,0,0)));
-
+                priority = new PriorityQueue<boundObj>(11,new boundObjComparator());
+                boundObj first = new boundObj(0, new ArrayList<Integer>(),new ArrayList<Integer>(),0,
+                        getBound(null,null,0,0));
+                priority.add(first);
+                printNode(first);
             }
+            boundObj current = priority.peek();
+
+            ArrayList<Integer> addList = new ArrayList<Integer>(current.getSetOfItems());
+            ArrayList<Integer> addExclude = new ArrayList<Integer>(current.getExcludes());
+
+            try {
+                counter = Math.max(Collections.max(addList), Collections.max(addExclude)) + 1;
+            }catch(NoSuchElementException e){
+                if(addList.isEmpty()) {
+                    if (addExclude.isEmpty()) {
+                        counter++;
+                    }
+                    else {
+                        counter = Collections.max(addExclude) + 1;
+                    }
+                }
+                else {
+                    counter = Collections.max(addList)+ 1;
+                }
+            }
+
+            if(!addList.contains((Integer)6) && !addExclude.contains((Integer)6)) {
+                addList.add(counter);
+                current.setRightChild(createNode(addList, current.getExcludes()));
+
+                addExclude.add(counter);
+                current.setLeftChild(createNode(current.getSetOfItems(), addExclude));
+
+                isBest = addChildrenToPriority(current.getRightChild());
+                isBest = isBest || addChildrenToPriority(current.getLeftChild());
+            }
+            else{
+                priority.poll();
+            }
+
+        } while (!isBest);
+    }
+
+    private static boolean addChildrenToPriority(boundObj child){
+        if(child.getWeight() > capacity) {
+            return false;
         }
+        else if (child.getBound() == child.getPrice()){
+            priority.add(child);
+            return true;
+        }
+        priority.add(child);
+        return false;
     }
 
     private static boundObj createNode(ArrayList<Integer> listOfItems, ArrayList<Integer> exclude){
-        double weight = listOfItems.stream().mapToDouble(i -> items[i][1]).sum();
-        double price = listOfItems.stream().mapToDouble(i -> items[i][0]).sum();
+        double weight = listOfItems.stream().mapToDouble(i -> items[i-1][1]).sum();
+        double price = listOfItems.stream().mapToDouble(i -> items[i-1][0]).sum();
         double bound = getBound(listOfItems, exclude, weight, price);
-        boundObj node = new boundObj(weight, listOfItems, price, bound);
+        boundObj node = new boundObj(weight, listOfItems,exclude, price, bound);
         printNode(node);
         return node;
     }
 
     private static double getBound(ArrayList<Integer> listOfItems, ArrayList<Integer> exclude, double weight, double price) {
-        double counter = 0;
+        double counter = 0.0;
         if(weight<capacity) {
-            while (counter < numberOfItems) {
+            while (counter < numberOfItems+1) {
                 if(listOfItems != null && listOfItems.contains(counter) ){
                     counter ++;
                 }
@@ -50,13 +97,13 @@ public class Project7 {
                 }
                 else if(weight < capacity){
                     if(weight + items[(int)counter][1] > capacity){
-                        price += items[(int)counter][2]*(capacity-weight);
+                        price += items[(int)counter][2]*(items[(int)counter][1]-(capacity-weight));
                         weight = capacity;
                         counter = numberOfItems;
                     }
                     else {
-                        price += items[(int)counter][0];
                         weight += items[(int)counter][1];
+                        price += items[(int)counter][0];
                     }
                 }
                 counter++;
@@ -67,7 +114,7 @@ public class Project7 {
 
     private static void printNode(boundObj boundO){
         System.out.println("Created Node with weight "+boundO.getWeight()+" Items "+boundO.getSetOfItems()+
-                " Price "+boundO.getPrice()+" bound "+boundO.getBound());
+                " Excludes "+ boundO.getExcludes()+" Price "+boundO.getPrice()+" bound "+boundO.getBound() + "\n");
     }
 
 
@@ -90,7 +137,7 @@ public class Project7 {
         }
     }
 
-    private static void sortByPricePerWeight(){
-
+    public int compare(boundObj o1, boundObj o2) {
+        return (int)(o1.getBound() - o2.getBound());
     }
 }
